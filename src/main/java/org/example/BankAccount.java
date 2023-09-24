@@ -1,11 +1,13 @@
 package org.example;
 
-    public class BankAccount implements BankUser {
+import java.util.ArrayList;
+
+public class BankAccount implements BankUser {
         private String userName;
         private int accountId;
         private double accountBalance;
         private BankCard userCard;
-        public BankAccount(String userName, int accountId, double accountBalance, BankCard userCard) {
+        public BankAccount(String userName, int accountId, double accountBalance, BankCard userCard, ArrayList<BankAccount> registrations) {
             this.userName = userName;
             this.accountId = accountId;
             this.accountBalance = accountBalance;

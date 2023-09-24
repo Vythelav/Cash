@@ -9,20 +9,24 @@ public class BankATM implements ATM {
         private BankAccount currentUser;
         private int remainingPinAttempts;
         private boolean next = false;
-        public ArrayList<BankCard> cards = new ArrayList<BankCard>();
-        public ArrayList<BankAccount> bankAccounts = new ArrayList<>();
+    public ArrayList<BankAccount> registrations = new ArrayList<BankAccount>();
+    public ArrayList<BankCard> cards = new ArrayList<BankCard>();
+    public ArrayList<BankAccount> bankAccounts = new ArrayList<>();
         public BankCard CardOne = new BankCard(123456,1234,123);
         public BankCard CardTwo = new BankCard(654321,4321,321);
         public BankCard CardThree = new BankCard(74343,5351,619);
          public BankCard CardFore = new BankCard(87643,1456,042);
         public BankCard CardFife = new BankCard(35566,9732,654);
-        public BankAccount bankAccountsOne = new BankAccount("Stepan",1,1234, CardOne);
-        public BankAccount bankAccountsTwo = new BankAccount("Slayik",2,4321, CardTwo);
-        public BankAccount bankAccountsThree = new BankAccount("Borise",3,543, CardThree);
-        public BankAccount bankAccountsFore = new BankAccount("Andrey",4,1652, CardFore);
-        public BankAccount bankAccountsFife = new BankAccount("Saha",5,12654, CardFife);
+        public BankAccount bankAccountsOne = new BankAccount("Stepan",1,1234, CardOne, registrations);
+        public BankAccount bankAccountsTwo = new BankAccount("Slayik",2,4321, CardTwo, registrations);
+        public BankAccount bankAccountsThree = new BankAccount("Borise",3,543, CardThree, registrations);
+        public BankAccount bankAccountsFore = new BankAccount("Andrey",4,1652, CardFore, registrations);
+        public BankAccount bankAccountsFife = new BankAccount("Saha",5,12654, CardFife, registrations);
 
-        private int checkMethod() {
+    public BankATM() {
+    }
+
+    private int checkMethod() {
             System.out.println("Что бы посмотреть баланс введите 1");
             System.out.println("Что бы положить деньги введите 2");
             System.out.println("Что бы снять деньги введите 3");
@@ -184,7 +188,7 @@ public class BankATM implements ATM {
 
         @Override
         public void blockCard() {
-            System.out.println("Вы заблакированны");
+            System.out.println("Вы заблокированны");
             currentCard.setIsBlocked(true);
         }
     }

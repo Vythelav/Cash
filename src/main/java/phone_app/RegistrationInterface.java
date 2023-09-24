@@ -5,5 +5,6 @@ public interface RegistrationInterface {
     void numberPhone();
     void password();
     void registration();
+    void entranceInSystem();
 
 }
